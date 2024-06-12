@@ -1,2 +1,2 @@
-# LinguagemC
-IOT
+# Aprendizado de Linguagem C
+Aperfeiçoando habilidade e descobrindo integrações...
