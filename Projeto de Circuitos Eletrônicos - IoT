@@ -1,0 +1,41 @@
+const int tempPin = A0; // Pino do sensor de temperatura
+const int motorPin = 9; // Pino do motor
+const int ledPin = 10;  // Pino do LED vermelho
+const int buzzerPin = 11; // Pino da buzina
+
+void setup() {
+  pinMode(tempPin, INPUT);
+  pinMode(motorPin, OUTPUT);
+  pinMode(ledPin, OUTPUT);
+  pinMode(buzzerPin, OUTPUT);
+  Serial.begin(9600); // Inicia a comunicação serial
+}
+
+void loop() {
+  // Ler a temperatura
+  int tempValue = analogRead(tempPin);
+  float voltage = tempValue * (5.0 / 1023.0);
+  float temperature = voltage * 100; // LM35: 10mV/°C
+
+  Serial.print("Temperature: ");
+  Serial.print(temperature);
+  Serial.println(" C");
+
+  // Acionar o motor se a temperatura for >= 30°C
+  if (temperature >= 30) {
+    digitalWrite(motorPin, HIGH);
+  } else {
+    digitalWrite(motorPin, LOW);
+  }
+
+  // Acionar o LED e a buzina se a temperatura > 50°C
+  if (temperature > 50) {
+    digitalWrite(ledPin, HIGH);
+    digitalWrite(buzzerPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+    digitalWrite(buzzerPin, LOW);
+  }
+
+  delay(1000); // Espera 1 segundo antes de ler a temperatura novamente
+}
