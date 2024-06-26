@@ -1,8 +1,8 @@
-Detecção de Objetos em Vídeo com ImageAI e YOLOv3
-📒 Descrição
+## Detecção de Objetos em Vídeo com ImageAI e YOLOv3
+# 📒 Descrição
 Neste projeto, implementaremos um estudo de caso usando YOLOv3 para detectar objetos em um vídeo armazenado. Utilizaremos a biblioteca ImageAI, que fornece classes e funções poderosas e fáceis de usar para realizar detecção e análise de vídeos.
 
-🤖 Tecnologias Utilizadas
+# 🤖 Tecnologias Utilizadas
 ImageAI
 YOLOv3
 OpenCV
@@ -73,8 +73,8 @@ Vamos visualizar os arquivos para garantir que a saída foi gerada corretamente.
 python
 Copiar código
 !ls '/content/gdrive/My Drive/Colab Notebooks/yolo/data'
-🚀 Resultados
+# 🚀 Resultados
 Arquivo de Vídeo Detectado: video_output.avi
 Log de Progresso: Visualização do progresso do vídeo enquanto os objetos são detectados frame a frame.
-💭 Reflexão
+# 💭 Reflexão
 Este projeto demonstrou a eficácia do uso de ImageAI e YOLOv3 para a detecção de objetos em vídeos. A integração dessas tecnologias permite a análise eficiente de vídeos e fluxos ao vivo, proporcionando uma ferramenta poderosa para diversas aplicações, como vigilância, monitoramento de tráfego, e análise de comportamento.
