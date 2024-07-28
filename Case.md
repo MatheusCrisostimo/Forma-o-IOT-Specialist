@@ -1,41 +1,44 @@
-Estrutura do Projeto
-Instalação de Dependências
-Preparação dos Dados
-Definição do Modelo com Transfer Learning
-Treinamento do Modelo
-Avaliação do Modelo
-Instruções para Subir no GitHub
-1. Instalação de Dependências
-Crie um arquivo requirements.txt com as bibliotecas necessárias:
+# Projeto de Reconhecimento de Imagens com Transfer Learning
 
-Copiar código
-tensorflow
-numpy
-matplotlib
-pandas
-scikit-learn
-Instale as dependências com:
+## Descrição
 
-sh
-Copiar código
+Este projeto implementa uma rede neural para reconhecimento de imagens digitais utilizando Transfer Learning com o modelo InceptionV3.
+
+## Estrutura do Projeto
+
+- `train.py`: Script principal para treinamento e avaliação do modelo.
+- `data/`: Diretório contendo os dados de treinamento e validação.
+- `requirements.txt`: Arquivo com as dependências do projeto.
+
+## Como Usar
+
+### 1. Instale as dependências
+
+Primeiro, crie um arquivo `requirements.txt` com as bibliotecas necessárias:
+
+```sh
+echo "tensorflow" >> requirements.txt
+echo "numpy" >> requirements.txt
+echo "matplotlib" >> requirements.txt
+echo "pandas" >> requirements.txt
+echo "scikit-learn" >> requirements.txt
+```
+
+Então, instale as dependências com:
 pip install -r requirements.txt
-2. Preparação dos Dados
-Organize seus dados em pastas train e validation:
 
-kotlin
-Copiar código
-data/
-    train/
-        class1/
-        class2/
-    validation/
-        class1/
-        class2/
-3. Definição do Modelo com Transfer Learning
-Crie um script train.py:
+### 2. Organize seus dados
+Crie a estrutura de diretórios para seus dados de treinamento e validação:
 
-python
-Copiar código
+````sh
+mkdir -p data/train data/validation
+````
+
+Coloque suas imagens nas pastas `data/train`e `data/validation`conforme necessário. Cada classe deve ter seu próprio subdiretório.
+
+### 3. Defina e Treine o Modelo
+
+``` python
 import tensorflow as tf
 from tensorflow.keras.applications import InceptionV3
 from tensorflow.keras.models import Model
@@ -88,93 +91,94 @@ history = model.fit(
     epochs=10  # Ajuste o número de épocas conforme necessário
 )
 
-# Salvar o modelo treinado
-model.save('model.h5')
-4. Treinamento do Modelo
-Execute o script de treinamento:
-
-sh
-Copiar código
-python train.py
-5. Avaliação do Modelo
-Adicione a avaliação do modelo no train.py:
-
-python
-Copiar código
 # Avaliar o modelo
 loss, accuracy = model.evaluate(validation_generator)
 print(f'Validation Accuracy: {accuracy*100:.2f}%')
-6. Instruções para Subir no GitHub
-Crie um repositório no GitHub e siga os passos abaixo:
 
-Inicialize um novo repositório Git:
-sh
-Copiar código
-git init
-Adicione todos os arquivos ao repositório:
-sh
-Copiar código
-git add .
-Faça o commit das mudanças:
-sh
-Copiar código
-git commit -m "Initial commit"
-Adicione a URL do repositório remoto:
-sh
-Copiar código
-git remote add origin https://github.com/seu-usuario/seu-repositorio.git
-Envie as mudanças para o GitHub:
-sh
-Copiar código
-git push -u origin master
-7. Arquivo README.md
-Adicione um arquivo README.md com instruções detalhadas sobre o projeto:
+# Salvar o modelo treinado
+model.save('model.h5')
+```
+Para treinar o modelo, execute:
 
-markdown
-Copiar código
-# Projeto de Reconhecimento de Imagens com Transfer Learning
-
-## Descrição
-
-Este projeto implementa uma rede neural para reconhecimento de imagens digitais utilizando Transfer Learning com o modelo InceptionV3.
-
-## Estrutura do Projeto
-
-- `train.py`: Script principal para treinamento e avaliação do modelo.
-- `data/`: Diretório contendo os dados de treinamento e validação.
-- `requirements.txt`: Arquivo com as dependências do projeto.
-
-## Como Usar
-
-### 1. Instale as dependências
-
-```sh
-pip install -r requirements.txt
-2. Organize seus dados
-Coloque suas imagens nas pastas data/train e data/validation conforme necessário.
-
-3. Treine o modelo
-sh
-Copiar código
+``` sh
 python train.py
-4. Avalie o modelo
+```
+
+### 4. Avalie o Modelo
 Os resultados da avaliação serão exibidos após o treinamento.
 
-Transfer Learning
+### 5. Suba o Projeto no GitHub
+
+#### 1. Inicialize um novo repositório Git:
+``` sh
+git init
+```
+
+#### 2. Adicione todos os arquivos ao repositório:
+``` sh
+git add .
+```
+
+#### 3. Faça o commit das mudanças:
+``` sh
+git commit -m "Initial commit with project structure and training script"
+```
+
+#### 4. Adicione a URL do repositório remoto:
+``` sh
+git remote add origin https://github.com/seu-usuario/image-recognition-deep-learning.git
+```
+
+#### 5. Envie as mudanças para o GitHub:
+``` sh
+git push -u origin master
+```
+
+## Estrutura Final do Projeto
+Seu projeto deve ter a seguinte estrutura:
+
+``` arduino
+image-recognition-deep-learning/
+│
+├── data/
+│   ├── train/
+│   │   ├── class1/
+│   │   └── class2/
+│   └── validation/
+│       ├── class1/
+│       └── class2/
+│
+├── train.py
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+
+## .gitignore
+Crie um arquivo .gitignore para evitar que arquivos desnecessários sejam enviados ao repositório:
+
+``` kotlin
+data/
+model.h5
+__pycache__/
+*.pyc
+.DS_Store
+```
+
+## Transfer Learning
 O modelo base utilizado é o InceptionV3, pré-treinado no ImageNet, com novas camadas adicionadas para adaptação à tarefa específica de classificação.
 
-Licença
+## Licença
 Este projeto está licenciado sob a MIT License.
 
-csharp
-Copiar código
+``` csharp
 
-### 8. Subir o Projeto Atualizado no GitHub
+### 6. Atualize o Repositório
 
-Atualize o repositório com as últimas mudanças:
+Caso faça alterações, atualize o repositório com as últimas mudanças:
 
 ```sh
 git add .
 git commit -m "Updated with detailed instructions and Transfer Learning"
 git push
-Com isso, você terá um repositório completo no GitHub com todas as etapas detalhadas para implementar e treinar um modelo de reconhecimento de imagens utilizando Transfer Learning.
+```
