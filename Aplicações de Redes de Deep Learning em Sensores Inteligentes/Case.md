@@ -176,6 +176,7 @@ Este projeto está licenciado sob a MIT License.
 ### 6. Atualize o Repositório
 
 Caso faça alterações, atualize o repositório com as últimas mudanças:
+```
 
 ```sh
 git add .
