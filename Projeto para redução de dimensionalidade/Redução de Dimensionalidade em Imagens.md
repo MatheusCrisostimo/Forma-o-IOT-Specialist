@@ -1,4 +1,3 @@
-```markdown
 # 🖼️ Redução de Dimensionalidade em Imagens
 
 Este projeto implementa a transformação de uma imagem colorida para tons de cinza e uma versão binarizada (preto e branco) usando Python. O objetivo é demonstrar técnicas de pré-processamento de imagens para aplicações em redes neurais e aprendizado de máquina.
