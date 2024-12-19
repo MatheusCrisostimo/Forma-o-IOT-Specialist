@@ -51,7 +51,9 @@ O script exibirá três imagens:
 
 ## ✨ Resultados
 ### Entrada
-Imagem colorida usada como entrada:
+Imagem colorida usada como entrada: <br/>
+[![image](https://github.com/user-attachments/assets/f8355e8e-439e-40ea-86f3-688defce3456)](https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png)
+
 
 ### Saída
 #### Imagem em Tons de Cinza:
