@@ -8,7 +8,26 @@ Este projeto explora a implementação da rede YOLO (You Only Look Once) para de
 - `cfg/`: Contém o arquivo de configuração do YOLO.
 - `scripts/`: Scripts para configurar o ambiente, treinar e avaliar o modelo.
 - `weights/`: Contém os pesos pré-treinados.
-  
+
+```plaintext
+darknet-yolo-project/
+├── data/                   # Arquivos de dados e anotações
+│   ├── train.txt           # Lista de imagens de treinamento
+│   ├── test.txt            # Lista de imagens de teste
+│   ├── obj.names           # Nomes das classes
+│   └── obj.data            # Configuração dos dados
+├── cfg/                    # Arquivos de configuração da rede
+│   └── yolov3.cfg
+├── scripts/                # Scripts para automação
+│   ├── setup_colab.py      # Configuração do ambiente no Colab
+│   ├── train_model.sh      # Script para treinamento
+│   └── evaluate_model.sh   # Script para avaliação
+├── weights/                # Pesos pré-treinados e gerados
+│   └── darknet53.conv.74
+├── results/                # Resultados do modelo
+├── README.md               # Documentação do projeto
+└── .gitignore              # Arquivos ignorados pelo Git
+```
 ## 🎯 Objetivos do Projeto
 1. **Treinamento Personalizado**: Treinar o modelo YOLO para detectar pelo menos duas classes customizadas.
 2. **Transferência de Aprendizado**: Utilizar pesos pré-treinados para acelerar o treinamento.
